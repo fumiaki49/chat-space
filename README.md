@@ -28,7 +28,7 @@ Things you may want to cover:
 |Column|Type|Options|
 |------|----|-------|
 |id|integer|null: false|
-|name|string||null:false|
+|name|string|null:false|
 |e-mail|string|null:false|
 |password|string|null:false|
 
@@ -40,7 +40,7 @@ Things you may want to cover:
 
 |Column|Type|Options|
 |------|----|-------|
-|id|integer|integer|null: false|
+|id|integer|null: false|
 |group-name|string|null: false|
 
 ### Association
