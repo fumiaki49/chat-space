@@ -22,3 +22,59 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+## userテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|id|integer|null: false|
+|name|string||null:false|
+|e-mail|string|null:false|
+|password|string|null:false|
+
+### Association
+- has_many :groups, thorugh: :members
+- has_many :members, :messages, :images
+
+## groupテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|id|integer|integer|null: false|
+|group-name|string|null: false|
+
+### Association
+- has_many :groups, thorugh: :members
+- has_many :members, :messages, :images
+
+## membersテーブル
+|Column|Type|Options|
+|------|----|-------|
+|user_id|integer|null: false, foreign_key: :true|
+|group_id|integer|null: false, foreign_key: :true|
+
+### Association
+- belongs_to :user
+- belongs_to :group
+
+## messageテーブル
+|Column|Type|Options|
+|------|----|-------|
+|body|text|null: false|
+|user_id|integer|null: false, foreign_key: :true|
+|group_id|integer|null: false, foreign_key: :true|
+
+### Association
+- belongs_to :user
+- belongs_to :group
+
+## imageテーブル
+|Column|Type|Options|
+|------|----|-------|
+|image|string||
+|user_id|integer|null: false, foreign_key: :true|
+|group_id|integer|null: false, foreign_key: :true|
+
+### Association
+- belongs_to :user
+- belongs_to :group
