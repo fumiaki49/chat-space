@@ -45,7 +45,7 @@ Things you may want to cover:
 |name|string|null: false, unique: true|
 
 ### Association
-- has_many :groups, thorugh: :members
+- has_many :users, thorugh: :members
 - has_many :members
 - has_many :messages
 
