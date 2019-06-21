@@ -36,7 +36,6 @@ Things you may want to cover:
 - has_many :groups, thorugh: :members
 - has_many :members
 - has_many :messages
-- has_many :images
 
 ## groupテーブル
 
@@ -49,7 +48,6 @@ Things you may want to cover:
 - has_many :groups, thorugh: :members
 - has_many :members
 - has_many :messages
-- has_many :images
 
 ## membersテーブル
 |Column|Type|Options|
