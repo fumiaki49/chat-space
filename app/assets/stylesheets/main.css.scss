@@ -1,0 +1,11 @@
+.Notice {
+  text-align: center;
+  color: white;
+  font-size: 1rem;
+  font-weight: lighter;
+  width: 100vw;
+  &__message {
+    background-color: #38AEF0;
+  }
+}
+
