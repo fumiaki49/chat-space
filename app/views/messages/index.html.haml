@@ -1,0 +1,54 @@
+.Notice  
+  .Notice__message 
+    グループを作成しました
+
+.wrapper
+  .chat-side
+    .side-header
+      %p.side-header__user-name sample-user
+      %ul.user-menu
+        %li.user-menu__edit-user
+          = link_to "", class: "edit__btn" do
+            = fa_icon 'edit'
+        %li.user-menu__new-group
+          = link_to "", class: "cog__btn" do
+            = fa_icon 'cog'
+    .groups  
+      %p.groups__group-name sample-group 
+      %p.groups__latest-message おはよう
+      %p.groups__group-name test-group 
+      %p.groups__latest-message おやすみ
+
+  .chat-main
+    .main-header
+      .main-header__left-box
+        .main-header__left-box__current-group sample-gorup
+        %ul.main-header__left-box__member-list 
+          Member:
+          %li.main-header__left-box__member-list__member
+            sample-user
+          %li.main-header__left-box__member-list__member
+            A-san
+          %li.main-header__left-box__member-list__member
+            B-san
+          %li.main-header__left-box__member-list__member
+            C-san
+      .main-header__edit-btn
+        Edit
+    .messages
+      .message
+        .message__upper-info
+          .message__upper-info__talker
+            sample-user
+          .message__upper-info__date
+            2019/06/29(Sat) 10:19:32
+        .message__text
+          おはよう
+    .form
+      .new-message
+        .input-box
+          %input.input-box__text{placeholder: "type a message", type: "text"}
+          %label.input-box__upload-label{for: "upload-icon"}
+            %i.fa.fa-picture-o
+            %input.input-box__upload-label__file{type: "file", id: "upload-icon"}
+        %input.submit-btn{type: "submit", value: "Send"}
