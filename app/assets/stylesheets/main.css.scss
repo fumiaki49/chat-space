@@ -62,12 +62,14 @@
 .chat-main {
   width: calc(100vw - 300px);
   float: left;
+  
 }
 
 .main-header {
   padding: 0 40px;
   border-bottom: #eeeeee;
   height: 100px;
+  display: flex;
   &__left-box {
     margin-top: 35px;
   }
@@ -83,5 +85,15 @@
   }
   &__left-box__member-list__member {
     padding-left: 0.3rem; 
+  }
+  &__edit-btn {
+    padding: 0 20px;
+    margin-top: 28px;
+    height: 40px;
+    color: $back-color;
+    border: solid 1px $back-color;
+    line-height: 40px;
+    position: absolute;
+    right: 40px;
   }
 }
