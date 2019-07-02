@@ -23,7 +23,7 @@
         %ul.main-header__left-box__member-list 
           Member:
           %li.main-header__left-box__member-list__member
-            sample-user
+            = current_user.name
           %li.main-header__left-box__member-list__member
             A-san
           %li.main-header__left-box__member-list__member
@@ -36,7 +36,7 @@
       .message
         .message__upper-info
           .message__upper-info__talker
-            sample-user
+            = current_user.name
           .message__upper-info__date
             2019/06/29(Sat) 10:19:32
         .message__text
