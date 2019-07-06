@@ -33,15 +33,8 @@
       .main-header__edit-btn
         Edit
     .messages
-      .message
-        .message__upper-info
-          .message__upper-info__talker
-            = current_user.name
-          .message__upper-info__date
-            2019/06/29(Sat) 10:19:32
-        .message__text
-          おはよう
-
+      = render @messages
+      
     .form
       = form_for [@group, @message] do |f|
         = f.text_field :content, class: 'form__message', placeholder: 'type a message'
