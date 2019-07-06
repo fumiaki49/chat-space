@@ -33,19 +33,13 @@
       .main-header__edit-btn
         Edit
     .messages
-      .message
-        .message__upper-info
-          .message__upper-info__talker
-            = current_user.name
-          .message__upper-info__date
-            2019/06/29(Sat) 10:19:32
-        .message__text
-          おはよう
+      = render @messages
+      
     .form
-      .new-message
-        .input-box
-          %input.input-box__text{placeholder: "type a message", type: "text"}
-          %label.input-box__upload-label{for: "upload-icon"}
-            %i.fa.fa-picture-o
-            %input.input-box__upload-label__file{type: "file", id: "upload-icon"}
-        %input.submit-btn{type: "submit", value: "Send"}
+      = form_for [@group, @message] do |f|
+        = f.text_field :content, class: 'form__message', placeholder: 'type a message'
+        .form__mask
+          = f.label :image, class: 'form__mask__image' do
+            = fa_icon 'picture-o', class: 'icon'
+            = f.file_field :image, class: 'hidden'
+        = f.submit 'Send', class: 'form__submit'
