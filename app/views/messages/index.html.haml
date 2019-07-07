@@ -4,17 +4,13 @@
   .chat-main
     .main-header
       .main-header__left-box
-        .main-header__left-box__current-group sample-gorup
+        .main-header__left-box__current-group
+          = @group.name
         %ul.main-header__left-box__member-list
           Member:
           %li.main-header__left-box__member-list__member
-            = current_user.name
-          %li.main-header__left-box__member-list__member
-            A-san
-          %li.main-header__left-box__member-list__member
-            B-san
-          %li.main-header__left-box__member-list__member
-            C-san
+            - @group.users.each do |user|
+              = user.name
       .main-header__edit-btn
         = link_to 'Edit', edit_group_path(@group)
     .messages
