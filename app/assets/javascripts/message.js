@@ -42,5 +42,8 @@ $(function() {
     .fail(function(){
       alert('エラーが発生したため送信できませんでした。');
     })
+    .always(function(){
+      $('input').prop('disabled', false);
+    })
   });
 });
