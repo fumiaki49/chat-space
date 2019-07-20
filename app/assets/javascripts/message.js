@@ -36,14 +36,15 @@ $(function() {
     })
     .done(function(data){
       var html = buildHTML(data);
-      $(".messages").append(html)
-      $("#message_content").val("")
+      $(".messages").append(html);
+      $("#message_content").val("");
+      $(".messages").animate({ scrollTop: $(".messages")[0].scrollHeight});
     })
     .fail(function(){
       alert('エラーが発生したため送信できませんでした。');
     })
     .always(function(){
-      $('input').prop('disabled', false);
+      $('.form__submit').prop('disabled', false);
     })
   });
 });
