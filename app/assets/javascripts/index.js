@@ -1,4 +1,4 @@
-$(function() {
+$(document).on('turbolinks:load',function() {
 
   var searchResult = $('#user-search-result');
   var member_list = $('#member_search_result');
