@@ -57,7 +57,7 @@ var buildMessageHTML = function(message) {
   var reloadMessages = function () {
     if (window.location.href.match(/\/groups\/\d+\/messages/)){
       var last_message_id = $('.message:last').data("message-id");
-      
+
       $.ajax({
         url: "api/messages",
         type: 'get',
@@ -65,14 +65,11 @@ var buildMessageHTML = function(message) {
         data: {last_id: last_message_id}
       })
       .done(function (messages) {
-        console.log(messages);
-        var insertHTML = '';
-        
+        var insertHTML = '';        
         messages.forEach(function(message) {
           insertHTML = buildMessageHTML(message);
           $('.messages').append(insertHTML);
         });
-        
         $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight}, 'fast');
       })
       
