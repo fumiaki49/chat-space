@@ -3,22 +3,22 @@ $(document).on('turbolinks:load', function() {
 var buildMessageHTML = function(message) {
     var content = message.content ? `${ message.content }` : "";
     var img = message.image ? `<img src= ${ message.image }>` : "";
-    var html =  '<div class="message" data-id=' + message.id + '>' +
-                  '<div class="message__upper-info">' +
-                    '<div class="message__upper-info__talker">' +
-                      message.user_name +
-                    '</div>' +
-                    '<div class="message__upper-info__date">' +
-                      message.created_at +
-                    '</div>' +
-                  '</div>' +
-                  '<div class="message__text">' +
-                    '<p class="lower-message__content">' +
-                      content +
-                    '</p>' +
-                    '<img src="' + img + '" class="lower-message__image" >' +
-                  '</div>' +
-                '</div>'
+    var html = `<div class="message" data-id= "${message.id}">
+                  <div class="message__upper-info">
+                    <div class="message__upper-info__talker">
+                    ${message.user_name}
+                    </div>
+                    <div class="message__upper-info__date">
+                    ${message.date}
+                    </div>
+                  </div>
+                  <div class="message__text">
+                    <p class="lower-message__content">
+                    ${content}
+                    </p>
+                    ${img}
+                  </div>
+                </div>`
     return html;
   };
 
