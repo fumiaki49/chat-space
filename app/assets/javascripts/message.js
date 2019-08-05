@@ -1,7 +1,6 @@
 $(document).on('turbolinks:load', function() {
 
-var buildMessageHTML = function(message) {
-    var content = message.content ? `${ message.content }` : "";
+function buildMessageHTML(message) {
     var img = message.image ? `<img src= ${ message.image }>` : "";
     var html = `<div class="message" data-id= "${message.id}">
                   <div class="message__upper-info">
@@ -14,7 +13,7 @@ var buildMessageHTML = function(message) {
                   </div>
                   <div class="message__text">
                     <p class="lower-message__content">
-                    ${content}
+                    ${message.content}
                     </p>
                     ${img}
                   </div>
@@ -23,10 +22,10 @@ var buildMessageHTML = function(message) {
   };
 
   
-  $(document).on('submit', '#new_message', function(e) {
+  $('#new_message').on('submit', function(e) {
     e.preventDefault();
     var formData = new FormData(this);
-    var url = $(this).attr('action');
+    var url = $(this).attr('action')
     
     $.ajax({
       url: url,
