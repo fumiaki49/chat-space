@@ -9,7 +9,7 @@ var buildMessageHTML = function(message) {
                     ${message.user_name}
                     </div>
                     <div class="message__upper-info__date">
-                    ${message.date}
+                    ${message.created_at}
                     </div>
                   </div>
                   <div class="message__text">
@@ -23,7 +23,7 @@ var buildMessageHTML = function(message) {
   };
 
   
-  $('#new_message').on('submit', function(e) {
+  $(document).on('submit', '#new_message', function(e) {
     e.preventDefault();
     var formData = new FormData(this);
     var url = $(this).attr('action');
@@ -60,7 +60,7 @@ var buildMessageHTML = function(message) {
 
       $.ajax({
         url: "api/messages",
-        type: 'get',
+        type: 'GET',
         dataType: 'json',
         data: {last_id: last_message_id}
       })
