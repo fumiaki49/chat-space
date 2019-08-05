@@ -49,6 +49,7 @@ function buildMessageHTML(message) {
     
     .always(function(){
       $('.form__submit').prop('disabled', false);
+      $('.message__text')[0].reset();
     })
 
   })
